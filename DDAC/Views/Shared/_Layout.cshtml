@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("MAERSK", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><div class="dropdown">
+                    <button class="dropbtn">Manage Shipping</button>
+                    <div class="dropdown-content">
+                    <p>@Html.ActionLink("Create Booking", "Booking", "Booking")</p>
+                    <p>@Html.ActionLink("Assign Containers", "Container", "Container")</p>
+                    <p>@Html.ActionLink("Ship Chartering", "Charter", "Charter")</p>
+                     </div>
+                    </div>
+                    </li>
+                    <li><div class="dropdown">
+                    <button class="dropbtn">Ground Management</button>
+                    <div class="dropdown-content">
+                    <p>@Html.ActionLink("Register Warehouse", "Warehouse", "Warehouse")</p>
+                    <p>@Html.ActionLink("Register Shipyard", "Shipyard", "Shipyard")</p>
+                    </div>
+                    </div></li>
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -Narash Kumar TP024196</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
